@@ -7,6 +7,10 @@ var server = http.createServer(function(req, res){
     res.writeHead(200, {'Content-Type': 'text/html'});
     console.log(" --> 200");
     fs.createReadStream('index.html').pipe(res);
+  } else if(urlMatch = req.url.match(/\/data\/(.*\.json)/m)) {
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    console.log(" --> 200");
+    fs.createReadStream('./data/' + urlMatch[1]).pipe(res);
   } else {
     res.writeHead(404, {'Content-Type': 'text/plain'});
     console.log(" --> 404");
