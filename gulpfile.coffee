@@ -8,7 +8,7 @@ util = require 'gulp-util'
 reload = browserSync.reload
 
 gulp.task 'coffee', ->
-  gulp.src 'assets/coffee/util.coffee'
+  gulp.src 'assets/coffee/app.coffee'
     .pipe coffee({bare: true})
       .on 'error', util.log
     .pipe gulp.dest 'public'
