@@ -11,6 +11,10 @@ var server = http.createServer(function(req, res){
     res.writeHead(200, {'Content-Type': 'application/json'});
     console.log(" --> [json] 200");
     fs.createReadStream('./data/' + urlMatch[1]).pipe(res);
+  } else if(urlMatch = req.url.match(/\/scripts\/(.*\.js)/m)) {
+    res.writeHead(200, {'Content-Type': 'application/javascript'});
+    console.log(" --> [js] 200");
+    fs.createReadStream('./scripts/' + urlMatch[1]).pipe(res);
   } else {
     res.writeHead(404, {'Content-Type': 'text/plain'});
     console.log(" --> 404");
