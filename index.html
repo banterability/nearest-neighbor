@@ -7,6 +7,36 @@
   </head>
   <body>
     <div id="map"></div>
+
+    -    <div class="overlays">
+-      <section class="overlay-places">
+-        <label for="check-show-places">Show important places:</label>
+-        <input id="check-show-places" type="checkbox">
+-
+-        <label for="check-radius-places">Show radius around places:</label>
+-        <input id="check-radius-places" type="checkbox">
+-
+-        <div class="slider">
+-          <span class='slider-readout'>1</span> mile <label for="place-radius">Radius around places:</label>
+-          <br>
+-          <input class='slider-control' id="place-radius" type="range" min="0.25" max="5" step="0.25" value="1">
+-        </div>
+-      </section>
+-      <section class="overlay-transit">
+-        <label for="check-show-cta">Show CTA stations:</label>
+-        <input id="check-show-cta" type="checkbox">
+-
+-        <label for="check-radius-cta">Show radius around CTA stations:</label>
+-        <input id="check-radius-cta" type="checkbox">
+-
+-        <div class="slider">
+-          <span class='slider-readout'>1</span> mile <label for="cta-radius">Radius around stations:</label>
+-          <br>
+-          <input class='slider-control' id="cta-radius" type="range" min="0.25" max="5" step="0.25" value="1">
+-        </div>
+-      </section>
+-    </div>
+
     <script src="public/vendor/turf.min.js"></script>
     <script src="public/app.js"></script>
     <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>

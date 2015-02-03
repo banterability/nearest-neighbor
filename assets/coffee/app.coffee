@@ -40,3 +40,11 @@ NN.Utils =
       areas.unshift turf.intersect(firstArea, secondArea)
 
     turf.intersect areas[0], areas[1]
+
+
+[].forEach.call document.querySelectorAll('.slider'), (node) ->
+  control = node.querySelector '.slider-control'
+  readout = node.querySelector '.slider-readout'
+  control.addEventListener 'input', (ev) ->
+    readout.textContent = control.value
+  , false
