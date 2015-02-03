@@ -1,16 +1,14 @@
 browserSync = require 'browser-sync'
-coffee = require 'gulp-coffee'
+coffeeify = require 'gulp-coffeeify'
 gulp = require 'gulp'
 nib = require 'nib'
 stylus = require 'gulp-stylus'
-util = require 'gulp-util'
 
 reload = browserSync.reload
 
 gulp.task 'coffee', ->
   gulp.src 'assets/coffee/app.coffee'
-    .pipe coffee({bare: true})
-      .on 'error', util.log
+    .pipe coffeeify({bare: true})
     .pipe gulp.dest 'public'
     .pipe reload stream: true
 
