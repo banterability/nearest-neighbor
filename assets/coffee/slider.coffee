@@ -23,7 +23,7 @@ drawRadiiWithIntersect = (layer, radius) ->
   )
 
 module.exports =
-  init: ->
+  init: (map) ->
     [].forEach.call document.querySelectorAll('.slider'), (node) ->
       control = node.querySelector '.slider-control'
       readout = node.querySelector '.slider-readout'
