@@ -1,8 +1,9 @@
 module.exports =
-  init: (map) ->
+  init: (map, options = {}) ->
     NN.layers.places = L.mapbox.featureLayer()
       .loadURL 'data/important_places.json'
-      .addTo map
 
     NN.layers.placesOverlay = L.mapbox.featureLayer()
-      .addTo map
+
+    NN.layers.places.addTo map if options.markers
+    NN.layers.placesOverlay.addTo map if options.overlays

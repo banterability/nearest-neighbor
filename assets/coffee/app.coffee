@@ -7,7 +7,7 @@ Trains = require './trains'
 (init = ->
   Map.init (map) ->
     Draggable.init map
-    Places.init map
+    Places.init map, markers: true
     Slider.init map
     Trains.init map
 )()
